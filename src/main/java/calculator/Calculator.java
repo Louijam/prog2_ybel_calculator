@@ -42,6 +42,7 @@ public class Calculator extends JFrame {
     private void setupOperationSelector() {
         operations = new HashMap<>();
         operations.put("Add", new Add());
+        operations.put("Sub", new Sub());
 
         // TODO
         // Add a new operation "Sub" for the subtraction of two integers as an (instance of a) Java
