@@ -51,6 +51,8 @@ public class Calculator extends JFrame {
             }
         });
 
+        operations.put("Div", (int a, int b)->a/b);
+
         // TODO
         // Add a new operation "Sub" for the subtraction of two integers as an (instance of a) Java
         // class (you have yet to write this class)
