@@ -44,6 +44,13 @@ public class Calculator extends JFrame {
         operations.put("Add", new Add());
         operations.put("Sub", new Sub());
 
+        operations.put("Mul", new Operation(){
+            @Override
+                public int doOperation(int a, int b){
+                return a*b;
+            }
+        });
+
         // TODO
         // Add a new operation "Sub" for the subtraction of two integers as an (instance of a) Java
         // class (you have yet to write this class)
