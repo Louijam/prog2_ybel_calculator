@@ -2,10 +2,8 @@ package calculator;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
-import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.*;
@@ -44,8 +42,6 @@ public class Calculator extends JFrame {
         operations = new HashMap<>();
         operations.put("Add", new Add());
 
-
-
         // TODO
         // Add a new operation "Sub" for the subtraction of two integers as an (instance of a) Java
         // class (you have yet to write this class)
@@ -53,17 +49,18 @@ public class Calculator extends JFrame {
 
         // TODO
         // Add a new operation "Mul" for the multiplication of two integers as an anonymous class
-        operations.put("Mul", new Operation(){
-            @Override
-            public int doOperation(int a, int b){
-                return a*b;
-            }
-        });
+        operations.put(
+                "Mul",
+                new Operation() {
+                    @Override
+                    public int doOperation(int a, int b) {
+                        return a * b;
+                    }
+                });
 
         // TODO
         // Add a new operation "Div" for the division of two integers as a lambda expression
-        operations.put("Div", (int a, int b)->a/b);
-
+        operations.put("Div", (int a, int b) -> a / b);
 
         operationSelector = new JComboBox<>();
         operations.forEach((key, value) -> operationSelector.addItem(key));
@@ -71,14 +68,14 @@ public class Calculator extends JFrame {
         // TODO
         // Replace the anonymous class with a lambda expression
 
-        operationSelector.addActionListener((ActionEvent e) -> {
-            try {
-                result.setText("" + calculate());
-            } catch (NumberFormatException ex) {
-                System.out.println("Invalid input.");
-            }
-
-        });
+        operationSelector.addActionListener(
+                (ActionEvent e) -> {
+                    try {
+                        result.setText("" + calculate());
+                    } catch (NumberFormatException ex) {
+                        System.out.println("Invalid input.");
+                    }
+                });
     }
 
     /**
